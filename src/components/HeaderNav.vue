@@ -114,10 +114,10 @@ to {opacity: .4;}
 
 .active{
     
-    animation: myfirst 1.2s;
-    -webkit-animation: myfirst 1.2s;
-    -moz-animation: myfirst 1.2s;
-    -o-animation: myfirst 1.2s;
+    animation: myfirst .8s;
+    -webkit-animation: myfirst .8s;
+    -moz-animation: myfirst .8s;
+    -o-animation: myfirst .8s;
     background-color: #242f35;
     opacity: 1;
     color: #fff;
