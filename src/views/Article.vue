@@ -3,10 +3,27 @@
         <div class="top">
              <div class="top-content">
                 <h1>Article</h1>
-                <p>一个正在学习的前端的人</p>
+                <p>做最好的自己</p>
             </div>
         </div>
-        <h1>This is an article page</h1>
+        <main class="main">
+            <div class="main-content">
+                <h3 class="main-content-title">2020年01月</h3>
+                <ul>
+                    <li>koa</li>
+                    <li>MongoDB</li>
+                    <li>nodejs</li>
+                </ul>
+            </div>
+             <div class="main-content">
+                <h3 class="main-content-title">2019年11月</h3>
+                <ul>
+                    <li>koa</li>
+                    <li>MongoDB</li>
+                    <li>nodejs</li>
+                </ul>
+            </div>
+        </main>
     </div>
 </template>
 
@@ -32,6 +49,35 @@
         }
         p{
           font-size:16px
+        }
+    }
+}
+.main{
+    width: 70%;
+    //height: 1000px;
+    margin-left: 15%;
+    //background-color: #ddd;
+    &-content{
+        padding:.1rem .2rem;
+        &-title{
+            color: #242f35;
+            font-weight: 400;
+            height: 20px;
+            line-height: 20px;
+            font-size: 18px;
+            font-family:'Microsoft Yahei';
+            list-style: disc;
+        }
+
+        ul{
+            li{
+                margin-top:10px; 
+                color: #666666;
+                font-size: 16px;
+                font-family: 'Microsoft Yahei';
+                list-style: disc;
+                margin-left: 20px;
+            }
         }
     }
 }

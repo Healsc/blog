@@ -1,6 +1,6 @@
 <template>
       <div class="container"  v-bind:class="[{ active: arr[0]},{after:arr[1]}]">
-          <div class="container-bc"></div>
+         
           <div class="container-nav ">
             <router-link class="container-nav-title" to="/">首页</router-link>
             <router-link class="container-nav-title" to="/article">文章</router-link>
@@ -55,7 +55,7 @@ export default {
         width: 16%;
         text-align: center;
         position: absolute;
-        right: 14%;
+        right: 1rem;
         display: flex;
         &-title{
             color: #fff;
@@ -118,7 +118,7 @@ to {opacity: .4;}
     -webkit-animation: myfirst .8s;
     -moz-animation: myfirst .8s;
     -o-animation: myfirst .8s;
-    background-color: #242f35;
+    background-color: #1A1818;
     opacity: 1;
     color: #fff;
 }
@@ -128,5 +128,31 @@ to {opacity: .4;}
     -moz-animation: after 2s;
     -o-animation: after 2s;
     opacity: .4;
+}
+@media  screen and (max-width: 1300px) {
+    .container{
+        &-nav{
+            width: 25%;
+        }
+    }
+}
+@media  screen and (max-width: 1100px) {
+    .container{
+        &-nav{
+            width: 30%;
+        }
+    }
+}
+@media  screen and (max-width: 750px) {
+    .container{
+        &-nav{
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        background-color: #000;
+        z-index: 99;
+    }
 }
 </style>
