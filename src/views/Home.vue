@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-   <header class="home-top">
+    <header class="home-top">
       <div class="home-top-content">
         <h1>HEAL's  Blog</h1>
         <p>在说做不到之前不要说放弃</p>
@@ -76,9 +76,11 @@
           <p>Email ：healsc@163.com</p>
           <p>QQ：398736770</p>
         </div>
+       
       </div>
     </main>
-     
+
+    
   </div>
 </template>
 
@@ -87,9 +89,21 @@
 
 
 export default {
-  name: 'Home',
+  
+  name: 'Home',data() {
+    return {
+     
+    }
+  },
   components: {
+   
+  },
+
+  methods: {
     
+  },
+  mounted(){
+   
   }
 }
 </script>
@@ -181,5 +195,9 @@ export default {
     }
     
   }
+}
+.test{
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 </style>

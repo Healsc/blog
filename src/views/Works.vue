@@ -88,7 +88,7 @@
   width: 70%;
   margin-left: 15%;
   margin-top: .1rem;;
-  height: 2000px;
+ 
   &-works{
     margin-bottom: .1rem;
     border-bottom: 1px solid rgba($color: #ddd, $alpha: .4);

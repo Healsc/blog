@@ -33,18 +33,12 @@ export default {
               Vue.set(this.arr,1,1)
           }
       }
-  },
-  watch: {
-   
-  },
-
+  }
 }
 </script>
 
 <style scoped lang="scss">
-
 .container{
-    position: relative;
     height: 60px;
     width: 100%;
     position: fixed;
@@ -84,15 +78,11 @@ export default {
     from {opacity: 0;}
     to {opacity: 1;}
 }
-
-
-
 @keyframes after
 {
 from {opacity: 1;background-color: #000;}
 to {opacity: 0.4;}
 }
-
 @-moz-keyframes after 
 {
 from {opacity: 1;background-color: #000;}
@@ -110,8 +100,6 @@ to {opacity: .4;}
 from {opacity: 1;background-color: #000;}
 to {opacity: .4;}
 }
-
-
 .active{
     
     animation: myfirst .8s;

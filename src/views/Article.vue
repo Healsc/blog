@@ -10,9 +10,9 @@
             <div class="main-content">
                 <h3 class="main-content-title">2020年01月</h3>
                 <ul>
-                    <li>koa</li>
-                    <li>MongoDB</li>
-                    <li>nodejs</li>
+                    <li @click="goDetail">koa</li>
+                    <li @click="goDetail">MongoDB</li>
+                    <li @click="goDetail">nodejs</li>
                 </ul>
             </div>
              <div class="main-content">
@@ -29,7 +29,17 @@
 
 <script>
     export default {
-        
+        data(){
+            return{
+
+            }
+        },
+        methods: {
+            goDetail(){
+                this.$router.push('/articleDetail')
+            }
+        },
+      
     }
 </script>
 
@@ -58,6 +68,10 @@
     margin-left: 15%;
     //background-color: #ddd;
     &-content{
+        li:hover{
+            cursor: pointer;
+            color: blue;
+        }
         padding:.1rem .2rem;
         &-title{
             color: #242f35;

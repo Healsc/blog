@@ -25,6 +25,10 @@ const routes = [
     path:'/works',
     name:'Works',
     component:()=>import('@/views/Works.vue')
+  },{
+    path:'/articleDetail',
+    name:'ArticleDetail',
+    component:()=>import('@/views/ArticleDetail.vue')
   }
 ]
 
