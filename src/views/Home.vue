@@ -1,72 +1,29 @@
 <template>
   <div class="home">
+    <!-- 顶部背景图片开始 后期封装一个组件显示 -->
     <header class="home-top">
       <div class="home-top-content">
         <h1>HEAL's  Blog</h1>
         <p>在说做不到之前不要说放弃</p>
       </div>
     </header>
-   
+   <!--顶部背景图片结束-->
     <main class="main">
-       <!-- 左侧区域 -->
+       <!-- 左侧区域开始 展示五个更新时间最近的文章 -->
       <div class="main-left">
         <ul>
-          <li>
+          <li v-for="(item,index) in articleList" :key="index">
               <div class="main-left-contents">
-                <h3 class="main-left-contents-title">搭建博客</h3>
-                <p class="main-left-contents-content">搭建博客搭建博客
+                <h3 class="main-left-contents-title">{{item.title}}</h3>
+                <p class="main-left-contents-content">{{ item.Introduction}}
                 </p>
-                <span class="main-left-contents-time">2020-03-11</span>
+                <span class="main-left-contents-time">{{item.time}}</span>
               </div>
           </li>
-
-          <li>
-             
-              <div class="main-left-contents">
-                <h3 class="main-left-contents-title">节流</h3>
-                <p class="main-left-contents-content">
-                有时候我们可能为了性能需要把页面中的图片进行懒加载处理，
-                那么我们就需要对浏览器的滚动条进行事件监听，判断我们的滚动条是否在我们设置的可视化范围之内，
-                进而改变图片的真实src到达性能优化的目的。由于滚动条事件触发是比较快的，
-                如果我们不做处理会处理很多次，反而大大的消耗了浏览器的性能。
-                </p>
-                <span class="main-left-contents-time">2020-03-10</span>
-              </div>
-          </li>
-
-          <li>
-              <div class="main-left-contents">
-                <h3 class="main-left-contents-title">防抖</h3>
-                <p class="main-left-contents-content">
-                 
-                  当我们对input搜索框需要做关键词选择的时候，如百度搜索的输入关键字选择热搜语句，
-                  我们可以对输入input框绑定onChang事件，当停止输入一段时间（如200ms），向后端发送请求，将获取关键词数据渲染出来。
-                  做页面适配的时候，我们需要对window.resize事件进行监听。
-                  我们只需要最后窗口的宽高，那我们就可以使用防抖，当最后一次变化时进行页面适配。
-                  对图片进行懒加载的时候，如果我们已经滑到最底部的时候，
-                  如果不对上拉事件进行限制，那么用户用户快速上滑几次，则会多次想后端发送请求，同时前端每次响应请求的时候会频繁的修改DOM。
-                </p>
-                <span class="main-left-contents-time">2020-03-03</span>
-              </div>
-          </li>
-
-          <li>
-              <div class="main-left-contents">
-                <h3 class="main-left-contents-title">我们都是追梦人</h3>
-                <p class="main-left-contents-content">
-                 
-                  2019悄然结束，从年前到现在的一件件事，一幅幅画面缺丢失不去。时不时浮现在眼前，
-                  仿佛经历就在昨天。不论对喜悦的留恋，还是对坏事的惋惜。
-                  时间不会因为你的留恋而有所停足，岁月也不会因为你的惋惜而倒回。旧梦结束的地方，是新梦开始的地方。
-                    校开展的课程很多，但是大多数课只是学习到了完成期末考试不挂科，很少进行深入。
-                </p>
-                <span class="main-left-contents-time">2020-03-02</span>
-              </div>
-          </li>
-
         </ul>
       </div>
-      <!-- 右侧区域 -->
+      <!-- 作业区域结束 -->
+      <!-- 右侧区域开始 展示个人信息 -->
       <div class="main-right">
         <div class="main-right-userinfo">
           <h3 class="main-right-userinfo-title">简介</h3>
@@ -76,10 +33,11 @@
           <p>Email ：healsc@163.com</p>
           <p>QQ：398736770</p>
         </div>
-       
       </div>
+      <!-- 右侧区域 个人信息结束 -->
     </main>
 
+   
     
   </div>
 </template>
@@ -87,21 +45,39 @@
 <script>
 // @ is an alias to /src
 
-
+import axios from 'axios';
+import url from '@/service.config.js'
 export default {
   
-  name: 'Home',data() {
+  name: 'Home',
+  data() {
     return {
-     
+      articleList:[],
+      msg:"hello"
     }
   },
   components: {
    
   },
-
-  methods: {
-    
+  created(){
+    this.getArticle();
   },
+  methods: {
+
+    /* 或许home页面文章列表 */
+    getArticle(){
+      axios({
+        url:url.getHomeArticle,
+        method:'get'
+      }).then((res)=>{
+        this.articleList = res.data
+        console.log(this.articleList)
+      }).catch((err)=>{
+        console.log(err)
+      })
+    }
+  },
+ 
   mounted(){
    
   }
@@ -196,8 +172,16 @@ export default {
     
   }
 }
-.test{
-  margin-bottom: 1rem;
-  margin-left: 1rem;
+@media  screen and (max-width: 750px) {
+  .home{
+    &-top{
+      height: 250px;
+    }
+  }
+    .main{
+      width: 90%;
+      margin-left: 5%;
+      flex-direction: column;
+    }
 }
 </style>

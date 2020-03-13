@@ -101,14 +101,15 @@ from {opacity: 1;background-color: #000;}
 to {opacity: .4;}
 }
 .active{
-    
-    animation: myfirst .8s;
-    -webkit-animation: myfirst .8s;
-    -moz-animation: myfirst .8s;
-    -o-animation: myfirst .8s;
+    animation: myfirst 1.2s;
+    -webkit-animation: myfirst 1.2s;
+    -moz-animation: myfirst 1.2s;
+    -o-animation: myfirst 1.2s;
     background-color: #1A1818;
     opacity: 1;
     color: #fff;
+    background-color: #000;
+    z-index: 99;
 }
 .after{
     animation: after 2s;

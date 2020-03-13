@@ -10,19 +10,12 @@
             <div class="main-content">
                 <h3 class="main-content-title">2020年01月</h3>
                 <ul>
-                    <li @click="goDetail">koa</li>
-                    <li @click="goDetail">MongoDB</li>
-                    <li @click="goDetail">nodejs</li>
-                </ul>
-            </div>
-             <div class="main-content">
-                <h3 class="main-content-title">2019年11月</h3>
-                <ul>
-                    <li>koa</li>
+                    <li v-on:click="goDetail">koa</li>
                     <li>MongoDB</li>
                     <li>nodejs</li>
                 </ul>
             </div>
+             
         </main>
     </div>
 </template>
@@ -31,7 +24,7 @@
     export default {
         data(){
             return{
-
+                masg:"hhhhh"
             }
         },
         methods: {

@@ -88,7 +88,6 @@
   width: 70%;
   margin-left: 15%;
   margin-top: .1rem;;
- 
   &-works{
     margin-bottom: .1rem;
     border-bottom: 1px solid rgba($color: #ddd, $alpha: .4);
@@ -105,5 +104,16 @@
       font-size: 16px;
     }
   }
+}
+
+@media  screen and (max-width: 750px) {
+    .top{
+      height: 250px;
+    }
+  
+    .main{
+      width: 90%;
+      margin-left: 5%;
+    }
 }
 </style>

@@ -31,15 +31,19 @@
         <p>熟练掌握C， java， PHP， jsvaScript等单词的拼写</p>
       </div>
     </main>
-    <!-- <div class="container">
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583941901996&di=a3d2226e4a7fcbf042e1c3d9bd869aba&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160620%2Fbd944ec6cce94fd88074c1ea08080424_th.jpg" alt="">
-    </div> -->
+    <div @click="goHander">
+      
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    
+    methods: {
+      goHander(){
+        alert('hello world')
+      }
+    },
   }
 </script>
 
@@ -63,16 +67,11 @@
     }
   }
 }
-/* .container{
-  background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583941393545&di=e0f401b2d755244dcd3bab22f612a984&imgtype=0&src=http%3A%2F%2Flux.chnart.com%2Fuploadfile%2F2013%2F0709%2F20130709090715347.jpg');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  opacity: .1;
-} */
+
 .content{
-  padding: 20px;
+  margin-top: .2rem;
   width: 70%;
-  margin-left: 15%;;
+  margin-left: 15%;
   font-family: 'Microsoft Yahei';
   h1{
     color: #242f35;
@@ -90,17 +89,14 @@
     line-height: 30px;
   }
 }
-/* .container{
-  position: absolute;
-  top: 350px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: .8;
-  z-index: -1;
-  img{
-    width: 100%;
-    height: 100%;
-  }
-} */
+@media  screen and (max-width: 750px) {
+    .top{
+      height: 250px;
+    }
+  
+    .content{
+      width: 90%;
+      margin-left: 5%;
+    }
+}
 </style>
