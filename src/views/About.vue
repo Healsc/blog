@@ -1,11 +1,6 @@
 <template>
   <div class="about">
-    <header class="top">
-      <div class="top-content">
-        <h1>About Me</h1>
-        <p>一个正在学习的前端的人</p>
-      </div>
-    </header>
+    <HeaderBC :childData="bcInfo"/>
   
     <main class="content">
       <div>
@@ -38,36 +33,29 @@
 </template>
 
 <script>
+import HeaderBC from '@/components/HeaderBC.vue';
   export default {
+    data(){
+      return{
+         bcInfo:{
+            title:"About Me",
+            content:'在说做不到之前不要放弃',
+            imgUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583859769829&di=0404878be0e27814fca0c125b52bfa9b&imgtype=0&src=http%3A%2F%2F00.minipic.eastday.com%2F20161122%2F20161122184944_ab4916244e194677b52b8c7d0b4e5623_12.jpeg"
+        }
+      }
+    },
     methods: {
       goHander(){
         alert('hello world')
       }
     },
+    components:{
+      HeaderBC
+    }
   }
 </script>
 
 <style lang="scss" scoped>
-.top{
-  width: 100%;
-  height: 350px;
-  background-repeat: no-repeat;
-  background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583859769829&di=0404878be0e27814fca0c125b52bfa9b&imgtype=0&src=http%3A%2F%2F00.minipic.eastday.com%2F20161122%2F20161122184944_ab4916244e194677b52b8c7d0b4e5623_12.jpeg');
-  background-size: 100% 100%;
-  /* position: relative; */
-  &-content{
-    text-align: center;
-    padding-top: .6rem;
-    color: #fff;
-    h1{
-      font-weight: 700;
-    }
-    p{
-      font-size:16px
-    }
-  }
-}
-
 .content{
   margin-top: .2rem;
   width: 70%;
@@ -90,10 +78,6 @@
   }
 }
 @media  screen and (max-width: 750px) {
-    .top{
-      height: 250px;
-    }
-  
     .content{
       width: 90%;
       margin-left: 5%;

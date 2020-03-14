@@ -13,6 +13,7 @@
 
 <script>
 import Vue from 'vue'
+
 export default {
   mounted(){
       window.addEventListener("scroll",this.handleScroll,true)
@@ -51,10 +52,12 @@ export default {
         position: absolute;
         right: 1rem;
         display: flex;
+        opacity: 1;
         &-title{
             color: #fff;
             flex-grow: 1;
             opacity: 1;
+            z-index:99;
         } 
     }
 }

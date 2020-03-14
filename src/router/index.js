@@ -26,9 +26,13 @@ const routes = [
     name:'Works',
     component:()=>import('@/views/Works.vue')
   },{
-    path:'/articleDetail',
+    path:'/articleDetail/:id',
     name:'ArticleDetail',
     component:()=>import('@/views/ArticleDetail.vue')
+  },{
+    path:'/test',
+    name:'Test',
+    component:()=>import('@/views/test.vue')
   }
 ]
 

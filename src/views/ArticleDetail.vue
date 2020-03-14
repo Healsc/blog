@@ -9,60 +9,54 @@
     
 
         <main class="main">
-            <h1 class="main-title">这是个标题。这是个标题。这是个标题</h1>
+            <h1 class="main-title">{{articleInfo.title}}</h1>
             <div class="main-info">
-                 <p>作者：heal</p>
-                 <p>时间：2020-03-12</p>
-                 <p>描述：这是个占位的数据。这是占位的</p>
+                 <p>作者：{{articleInfo.author}}</p>
+                 <p>时间：{{articleInfo.time}}</p>
+                 <p>描述：{{articleInfo.description}}</p>
             </div>
            <div class="main-content">
-                <div id="result"></div>
-                <div class="test">
-                    <textarea id="content" 
-                    style="min-height:1rem;width:100%;" 
-                        v-on:keyup="compile()">
-                     </textarea>
-                    
+                <div id="result">
+                    <p>{{articleInfo.content}}</p>
                 </div>
-                <p id="markdown"></p>
+              
            </div>
         </main>
     </div>
 </template>
 
 <script>
-import showdown from 'showdown';
+import axios from 'axios';
+import url from '@/service.config.js';
     export default {
         data() {
             return {
-                datalist:""
+                id:this.$route.params.id,
+                articleInfo:{}
             }
         },
-        methods: {
-            compile(){
-                var text = document.getElementById("content").value;
-                this.datalist = text;
-                var converter = new showdown.Converter();
-                var html = converter.makeHtml(text);
-                document.getElementById("result").innerHTML = html;
+        created(){
+            this.getArticleDetail();
         },
-        get(){
-        
-            var converter = new showdown.Converter();
-            converter.setOption("tasklists", true);
-                //支持显示table，默认false
-            converter.setOption("tables", true);
-                /* underline */
-            converter.setOption("tablesHeaderId", true);
-                /* headerLevelStart */
-            converter.setOption("headerLevelStart", true);
-            converter.setOption("underline", true);
-                //支持图片大小设置，默认为false
-            converter.setOption("parseImgDimensions", true);
-
-            this.test      = converter.makeHtml(this.datalist);
-            document.getElementById('markdown').innerHTML = this.test
-        }
+        methods: {
+            /* 获取文章详情 */
+            getArticleDetail(){
+                axios({
+                    url:url.getArticleDetail,
+                    method:'get',
+                    params:{
+                        id:this.id
+                    }
+                }).then((res)=>{
+                    //console.log(res)
+                    this.articleInfo = res.data
+                    //console.log(this.articleInfo)
+                }).catch(()=>{
+                    alert('fail')
+                    //console.log(err)
+                })
+            }
+          
         },   
     }
 </script>
@@ -92,7 +86,6 @@ import showdown from 'showdown';
    // background-color: #ddd;
     width:70%;
     margin-left: 15%;
-    height: 2000px;
     padding: .1rem .1rem;
     &-title{
        text-align: center;
@@ -118,5 +111,15 @@ import showdown from 'showdown';
     color: #24292E;
     font-size: 16px;
     margin-bottom: 16px;
+}
+@media  screen and (max-width: 750px) {
+    .top{
+      height: 250px;
+    }
+  
+    .main{
+      width: 90%;
+      margin-left: 5%;
+    }
 }
 </style>
