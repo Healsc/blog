@@ -6,7 +6,8 @@ const URL = {
     getArticleDetail: SERVERURL + 'article/getArticleDetail',
     getWorks: SERVERURL + 'works/getWorks',
     getTypes: SERVERURL + 'type/getTypes',
-    getArticleList: SERVERURL + 'article/getArticleList'
+    getArticleList: SERVERURL + 'article/getArticleList',
+    getAbout: SERVERURL + "about/getAbout"
 };
 
 export default URL;

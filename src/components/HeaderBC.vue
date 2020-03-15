@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <!-- 顶部背景图片开始 后期封装一个组件显示 -->
+        <!-- 顶部背景图片开始 -->
             <header class="container-top" :style=background>
             <div class="container-top-content">
                 <h1>{{childData.title}}</h1>
@@ -15,29 +15,24 @@
     export default {
         data(){
             return{
-                test:''
+                
             }
         },
          name: 'HeaderBC',
          props:['childData'],
          created() {
-             this.pr()
+            
          },
          methods:{
-             pr(){
-                 this.test = this.childData
-                 console.log(this.test)
-                 console.log(this.test.imgUrl)
-             }
+
          },
          computed: {
              background:function(){
                  return{
-                      backgroundImage:"url("+this.test.imgUrl+")",
+                      backgroundImage:"url("+this.childData.imgUrl+")",
                  }
              }
          },
-
     }
 </script>
 

@@ -2,52 +2,6 @@
     <div>
         <HeaderBC :childData="bcInfo"/>  
         <main class="main">
-          <!-- <div class="main-works">
-            <p class="main-works-title">这是项目名称</p>
-            <p class="main-works-time">2020-02-02</p>
-            <p class="main-works-content">这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              
-              这里加个点击事件跳转到项目地址或者github上
-            </p>
-          </div>
-
-          <div class="main-works">
-            <p class="main-works-title">这是项目名称</p>
-            <p class="main-works-time">2020-02-02</p>
-            <p class="main-works-content">这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-            </p>
-          </div>
-          <div class="main-works">
-            <p class="main-works-title">这是项目名称</p>
-            <p class="main-works-time">2020-02-02</p>
-            <p class="main-works-content">这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-              这是简介这是简介这是简介这是简介
-            </p>
-          </div>
-
-        <div class="main-works">
-            <p class="main-works-title">这是项目名称</p>
-            <p class="main-works-time">2020-02-02</p>
-            <p class="main-works-content">这是简介这是简介这是简介这是简介
-              使用axios请求后端数据 使用循环 ，遍历后端传过来的数据。但是啊， 没做过项目， 哪有数据 。干啥啥不行， 吃啥啥不剩。
-            </p>
-          </div> -->
           <div class="main-works" v-for="(item,index) in worksList" :key="index">
             <p class="main-works-title">{{item.title}}</p>
             <p class="main-works-time">{{item.time}}</p>
