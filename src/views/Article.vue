@@ -64,7 +64,7 @@ import HeaderBC from '@/components/HeaderBC.vue';
             })
            },
             getArticleList(types){
-                console.log(types)
+                //console.log(types)
                 axios({
                     url:url.getArticleList,
                     mothod:'get',
@@ -73,14 +73,14 @@ import HeaderBC from '@/components/HeaderBC.vue';
                     }
                 }).then((res)=>{
                     this.articleList = res.data
-                    console.log(this.articleList)
+                    //console.log(this.articleList)
                 }).catch(()=>{
 
                 })
             },
             goDetail(id){
                 this.$router.push(`/articleDetail/${id}`)
-                console.log(id)
+                //console.log(id)
             },
         },
       

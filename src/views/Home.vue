@@ -104,7 +104,7 @@ export default {
         method:'get'
       }).then((res)=>{
         this.articleList = res.data
-        console.log(this.articleList)
+        //console.log(this.articleList)
       }).catch((err)=>{
         console.log(err)
       })
@@ -115,7 +115,7 @@ export default {
 
     goDetail(id){
       this.$router.push(`/articleDetail/${id}`)
-      console.log(id)
+      //console.log(id)
     },
      /* 跳转到文章详情页面 结束*/
   },

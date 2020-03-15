@@ -42,7 +42,7 @@ import HeaderBC from '@/components/HeaderBC.vue';
               method:'get'
             }).then((res)=>{
               this.worksList=res.data;
-              console.log(this.worksList)
+              //console.log(this.worksList)
             }).catch((err)=>{
               console.log(err)
             })

@@ -8,8 +8,6 @@
         <p v-for="(item,index) in aboutInfo[0].aboutMe" :key="index">
           {{item}}
         </p>
-       <!--  <p>东北农业大学2017级在校学生</p>
-        <p>计算机科学与技术专业</p> -->
       </div>
 
       <div class="content-part">
@@ -25,13 +23,6 @@
         <p v-for="(item,index) in aboutInfo[0].personExperience" :key="index">
           {{item}}
         </p>
-      <!--   <p>大二接触前端，开始接触html/css/js</p>
-        <p>熟练掌握C， java， PHP， jsvaScript等单词的拼写.熟练掌握C， 
-          java， PHP， jsvaScript等单词的拼写.熟练掌握C， 
-          java， PHP， jsvaScript等单词的拼写</p>
-        <p>熟练掌握C， java， PHP， jsvaScript等单词的拼写</p>
-        <p>熟练掌握C， java， PHP， jsvaScript等单词的拼写</p>
-        <p>熟练掌握C， java， PHP， jsvaScript等单词的拼写</p> -->
       </div>
     
       <div class="content-part">
@@ -57,7 +48,13 @@ import url from '@/service.config.js';
   export default {
     data(){
       return{
-        aboutInfo:[],
+        aboutInfo:[
+          {
+            "aboutMe":"",
+            "skill":"",
+            "personExperience":""
+          }
+        ],
         worksList:[],
         bcInfo:{
             title:"About Me",
@@ -90,7 +87,7 @@ import url from '@/service.config.js';
               method:'get'
             }).then((res)=>{
               this.worksList=res.data;
-              console.log(this.worksList)
+              //console.log(this.worksList)
             }).catch((err)=>{
               console.log(err)
             })
