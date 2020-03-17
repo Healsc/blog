@@ -59,7 +59,8 @@ import HeaderBC from '@/components/HeaderBC.vue';
             }).then((res)=>{
                 this.typeList = res.data;
                 //console.log(res)
-            }).catch(()=>{
+            }).catch((err)=>{
+                console.log(err)
                 alert('fail')
             })
            },

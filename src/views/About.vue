@@ -74,7 +74,10 @@ import url from '@/service.config.js';
           url:url.getAbout,
           method:'get'
         }).then(res=>{
-          this.aboutInfo = res.data;
+          if(res.data){
+              this.aboutInfo = res.data;
+          }
+         
           //console.log(res.data)
           //console.log(this.aboutInfo)
         }).catch(()=>{

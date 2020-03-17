@@ -28,8 +28,8 @@ import HeaderBC from '@/components/HeaderBC.vue';
               title:"My Works",
               content:'Hello Front_End',
               imgUrl:"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3399945878,388913725&fm=11&gp=0.jpg"
-          },
-            test:'http://www.qq.com'
+          }
+           
           }
         },
         components:{
@@ -43,8 +43,8 @@ import HeaderBC from '@/components/HeaderBC.vue';
             }).then((res)=>{
               this.worksList=res.data;
               //console.log(this.worksList)
-            }).catch((err)=>{
-              console.log(err)
+            }).catch(()=>{
+              //console.log(err)
             })
           }
         },
